@@ -28,7 +28,10 @@ def count(list_in_use: list[str]) -> dict[str, int]:
 
 def favorite_color(colors: dict[str, str]) -> str:
     """Returns the most common favorite color."""
-    color_counts = count(list(colors.values()))
+    color_list = []
+    for idx in colors:
+        color_list.append(colors[idx])
+    color_counts = count(color_list)
     max_color = ""
     max_count_value = -1
     for i in colors.values():
